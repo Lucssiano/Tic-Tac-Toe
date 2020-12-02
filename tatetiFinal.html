@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>TATETI</title>
+    <link rel="stylesheet" type="text/css" href="tatetiFinal.css">
+</head>
+
+<script type="text/javascript" src="tatetiFinal.js"></script>
+
+<body>
+
+    <header>
+        <h1>TATETÍ</h1>
+    </header>
+
+    <h2>Computadora juega con: <span id="ficham"></span></h2>
+    <h2>Humano juega con: <span id="fichah"></span></h2>
+
+    <section id="paginaant">
+        <input type="button" id="botonInicio" value="INICIAR EL JUEGO"
+            style="background-color: orange; margin-top: 5px;" onclick="inicio()">
+    </section>
+
+    <section id="tablero">
+        <a class="celda" id="ceroCero" onclick="jugadaHumano0();"></a>
+        <div class="celda" id="ceroUno" onclick="jugadaHumano1();"></div>
+        <div class="celda" id="ceroDos" onclick="jugadaHumano2();"></div>
+        <div class="celda" id="unoCero" onclick="jugadaHumano3();"></div>
+        <div class="celda" id="unoUno" onclick="jugadaHumano4();"></div>
+        <div class="celda" id="unoDos" onclick="jugadaHumano5();"></div>
+        <div class="celda" id="dosCero" onclick="jugadaHumano6();"></div>
+        <div class="celda" id="dosUno" onclick="jugadaHumano7();"></div>
+        <div class="celda" id="dosDos" onclick="jugadaHumano8();"></div>
+    </section>
+
+    <h4> <span id="cambio">Elija una letra </span> </h4>
+    <section id="letraelec"> <input type="button" id="botonLetraX" value="X" style="background-color: green;"
+            onclick="desaparecerX()">
+        <input type="button" id="botonLetraO" value="O" style="background-color: red;" onclick="desaparecerO()">
+    </section>
+
+    <section id="marcador">
+        <legend>DATOS</legend>
+        <h3>
+            <section id="ganadosH">Partidas ganadas por el humano: <span id="Humano"> 0</span></section>
+        </h3>
+        <h3>
+            <section id="ganadosC">Partidas ganadas por la computadora: <span id="Computadora"> 0</span></section>
+        </h3>
+        <h3>
+            <section id="Empates">Empates: <span id="empate"> 0</span></section>
+        </h3>
+    </section>
+
+</body>
+
+</html>
