@@ -472,8 +472,8 @@ function limpiar() {
   document.getElementById("cambio").innerHTML = "Elija una letra";
   document.getElementById("fichah").innerHTML = "";
   document.getElementById("ficham").innerHTML = "";
-  ganador = 0;
-  console.log(ganador + "  ganador en limpiar");
+  // ganador = 0;
+  // console.log(ganador + "  ganador en limpiar");
 }
 
 console.log(ganador + "  ganador en general");
