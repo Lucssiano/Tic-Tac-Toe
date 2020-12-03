@@ -40,6 +40,8 @@ var ocupadac5 = 0;
 var ocupadac6 = 0;
 var ocupadac7 = 0;
 var ocupadac8 = 0;
+// Variable que verifica que alguien ganó
+let ganador = 0;
 
 // ### FUNCIONES ###
 
@@ -382,104 +384,45 @@ function verificarGanador() {
   var b8 = document.getElementById("dosUno").textContent;
   var b9 = document.getElementById("dosDos").textContent;
 
+  /*   ganador = 1;
+  console.log(ganador + " ganador en verificarGanador"); */
+
   if (b1 == "X" && b2 == "X" && b3 == "X") {
     // alert("Gano la X");
     // contador();
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
+    ganadorX();
     // alerta();
     // limpiar();
   } else if (b4 == "X" && b5 == "X" && b6 == "X") {
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
+    ganadorX();
   } else if (b7 == "X" && b8 == "X" && b9 == "X") {
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
+    ganadorX();
   } else if (b1 == "X" && b4 == "X" && b7 == "X") {
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
+    ganadorX();
   } else if (b2 == "X" && b5 == "X" && b8 == "X") {
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
+    ganadorX();
   } else if (b3 == "X" && b6 == "X" && b9 == "X") {
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
+    ganadorX();
   } else if (b1 == "X" && b5 == "X" && b9 == "X") {
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
+    ganadorX();
   } else if (b3 == "X" && b5 == "X" && b7 == "X") {
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
+    ganadorX();
   } else if (b1 == "O" && b2 == "O" && b3 == "O") {
-    setTimeout(function () {
-      contador2();
-      limpiar();
-      alert("Ganó el O");
-    }, 100);
+    ganadorO();
   } else if (b4 == "O" && b5 == "O" && b6 == "O") {
-    setTimeout(function () {
-      contador2();
-      limpiar();
-      alert("Ganó el O");
-    }, 100);
+    ganadorO();
   } else if (b7 == "O" && b8 == "O" && b9 == "O") {
-    setTimeout(function () {
-      contador2();
-      limpiar();
-      alert("Ganó el O");
-    }, 100);
+    ganadorO();
   } else if (b1 == "O" && b4 == "O" && b7 == "O") {
-    setTimeout(function () {
-      contador2();
-      limpiar();
-      alert("Ganó el O");
-    }, 100);
+    ganadorO();
   } else if (b2 == "O" && b5 == "O" && b8 == "O") {
-    setTimeout(function () {
-      contador2();
-      limpiar();
-      alert("Ganó el O");
-    }, 100);
+    ganadorO();
   } else if (b3 == "O" && b6 == "O" && b9 == "O") {
-    setTimeout(function () {
-      contador2();
-      limpiar();
-      alert("Ganó el O");
-    }, 100);
+    ganadorO();
   } else if (b1 == "O" && b5 == "O" && b9 == "O") {
-    setTimeout(function () {
-      contador2();
-      limpiar();
-      alert("Ganó el O");
-    }, 100);
+    ganadorO();
   } else if (b3 == "O" && b5 == "O" && b7 == "O") {
-    alert("Gano el O");
-    contador2();
-    limpiar();
+    ganadorO();
   } else if (
     b1 !== "" &&
     b2 !== "" &&
@@ -492,17 +435,14 @@ function verificarGanador() {
     b8 !== "" &&
     b9 !== ""
   ) {
-    setTimeout(function () {
-      alert("Empate");
-      empates++;
-      limpiar();
-    }, 100);
+    nGanador();
     document.getElementById("empate").innerHTML = empates;
   }
 }
 
 // "Resetea" el juego
 function limpiar() {
+  // ¿Por qué entra mas de una vez a limpiar?
   b1 = document.getElementById("ceroCero").textContent = "";
   b2 = document.getElementById("ceroUno").textContent = "";
   b3 = document.getElementById("ceroDos").textContent = "";
@@ -532,7 +472,11 @@ function limpiar() {
   document.getElementById("cambio").innerHTML = "Elija una letra";
   document.getElementById("fichah").innerHTML = "";
   document.getElementById("ficham").innerHTML = "";
+  ganador = 0;
+  console.log(ganador + "  ganador en limpiar");
 }
+
+console.log(ganador + "  ganador en general");
 
 // Contador cuando el ganador es la "X"
 function contador() {
@@ -585,3 +529,29 @@ function desaparecerO() {
   }
 }
 
+// Funcion para el Timeout cuando gana la O
+function ganadorO() {
+  setTimeout(function () {
+    contador2();
+    limpiar();
+    alert("Ganó el O");
+  }, 100);
+}
+
+// Funcion para el Timeout cuando gana la X
+function ganadorX() {
+  setTimeout(function () {
+    contador();
+    limpiar();
+    alert("Ganó la X");
+  }, 100);
+}
+
+// Funcion para el Timeout cuando hay un empate
+function nGanador() {
+  setTimeout(function () {
+    alert("Empate");
+    empates++;
+    limpiar();
+  }, 100);
+}
