@@ -535,6 +535,7 @@ function ganadorO() {
     contador2();
     limpiar();
     alert("Ganó el O");
+    console.log('entró O');
   }, 100);
 }
 
@@ -544,6 +545,7 @@ function ganadorX() {
     contador();
     limpiar();
     alert("Ganó la X");
+    console.log('entró X');
   }, 100);
 }
 
@@ -553,5 +555,8 @@ function nGanador() {
     alert("Empate");
     empates++;
     limpiar();
+    console.log('entró Empate');
   }, 100);
 }
+
+// Entra más de una vez a los Timeout
