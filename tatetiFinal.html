@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <title>TATETI</title>
     <link rel="stylesheet" type="text/css" href="tatetiFinal.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 </head>
 
 <script type="text/javascript" src="tatetiFinal.js"></script>
@@ -25,15 +26,15 @@
     </section>
 
     <section id="tablero">
-        <a class="celda" id="ceroCero" onclick="jugadaHumano0();"></a>
-        <div class="celda" id="ceroUno" onclick="jugadaHumano1();"></div>
-        <div class="celda" id="ceroDos" onclick="jugadaHumano2();"></div>
-        <div class="celda" id="unoCero" onclick="jugadaHumano3();"></div>
-        <div class="celda" id="unoUno" onclick="jugadaHumano4();"></div>
-        <div class="celda" id="unoDos" onclick="jugadaHumano5();"></div>
-        <div class="celda" id="dosCero" onclick="jugadaHumano6();"></div>
-        <div class="celda" id="dosUno" onclick="jugadaHumano7();"></div>
-        <div class="celda" id="dosDos" onclick="jugadaHumano8();"></div>
+        <a class="celda" id="ceroCero" onclick="jugadaHumano0();verificarGanador()"></a>
+        <div class="celda" id="ceroUno" onclick="jugadaHumano1();verificarGanador()"></div>
+        <div class="celda" id="ceroDos" onclick="jugadaHumano2();verificarGanador()"></div>
+        <div class="celda" id="unoCero" onclick="jugadaHumano3();verificarGanador()"></div>
+        <div class="celda" id="unoUno" onclick="jugadaHumano4();verificarGanador()"></div>
+        <div class="celda" id="unoDos" onclick="jugadaHumano5();verificarGanador()"></div>
+        <div class="celda" id="dosCero" onclick="jugadaHumano6();verificarGanador()"></div>
+        <div class="celda" id="dosUno" onclick="jugadaHumano7();verificarGanador()"></div>
+        <div class="celda" id="dosDos" onclick="jugadaHumano8();verificarGanador()"></div>
     </section>
 
     <h4> <span id="cambio">Elija una letra </span> </h4>

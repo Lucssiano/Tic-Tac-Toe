@@ -19,7 +19,17 @@ var letra = [];
 // Turnos
 var turno;
 // Espacios del tateti
-var IDS = ["ceroCero", "ceroUno", "ceroDos", "unoCero", "unoUno", "unoDos", "dosCero", "dosUno", "dosDos"];
+var IDS = [
+  "ceroCero",
+  "ceroUno",
+  "ceroDos",
+  "unoCero",
+  "unoUno",
+  "unoDos",
+  "dosCero",
+  "dosUno",
+  "dosDos",
+];
 // Espacios del tateti usados
 var IDS2 = [];
 // Posicion en la que cae la ficha de la máquina
@@ -50,7 +60,9 @@ function inicio() {
   }
   document.getElementById("paginaant").style.visibility = "hidden";
   randNum = Math.floor(Math.random() * jugadores.length);
+  console.log(randNum + "  numero random");
   jugadorFinal = jugadores[randNum];
+  console.log(jugadorFinal + "  jugador final");
   alert("Comienza jugando:  " + jugadorFinal);
   habilitado = habilitacion;
 }
@@ -58,13 +70,17 @@ function inicio() {
 // Función para los turnos
 function juego() {
   if (jugadorFinal === jugadores[0] && letra === letras[0]) {
+    console.log(letra);
     turno = 0;
+    console.log(turno + "  turno");
     maquinaO();
   } else if (jugadorFinal === jugadores[0] && letra === letras[1]) {
     turno = 0;
+    console.log(turno + "  turno");
     maquinaX();
   } else if (jugadorFinal === jugadores[1]) {
     turno = 1;
+    console.log(turno + "  turno");
   } else {
     alert("Presione el boton de iniciar el juego");
   }
@@ -73,7 +89,7 @@ function juego() {
 // La máquina escribe al azar con O
 function maquinaO() {
   posicionmaq = IDS[Math.floor(Math.random() * IDS.length)];
-  // verificarGanador();
+  verificarGanador();
   if (IDS2.includes(posicionmaq)) {
     maquinaO();
   } else {
@@ -146,7 +162,7 @@ function maquinaO() {
 // La máquina escribe al azar con X
 function maquinaX() {
   posicionmaq = IDS[Math.floor(Math.random() * IDS.length)];
-  // verificarGanador();
+  verificarGanador();
   if (IDS2.includes(posicionmaq)) {
     maquinaX();
   } else {
@@ -383,99 +399,65 @@ function verificarGanador() {
   var b9 = document.getElementById("dosDos").textContent;
 
   if (b1 == "X" && b2 == "X" && b3 == "X") {
-    // alert("Gano la X");
-    // contador();
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
-    // alerta();
-    // limpiar();
+    alert("Gano la X");
+    contador();
+    limpiar();
   } else if (b4 == "X" && b5 == "X" && b6 == "X") {
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
+    alert("Gano la X");
+    contador();
+    limpiar();
   } else if (b7 == "X" && b8 == "X" && b9 == "X") {
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
+    alert("Gano la X");
+    contador();
+    limpiar();
   } else if (b1 == "X" && b4 == "X" && b7 == "X") {
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
+    alert("Gano la X");
+    contador();
+    limpiar();
   } else if (b2 == "X" && b5 == "X" && b8 == "X") {
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
+    alert("Gano la X");
+    contador();
+    limpiar();
   } else if (b3 == "X" && b6 == "X" && b9 == "X") {
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
+    alert("Gano la X");
+    contador();
+    limpiar();
   } else if (b1 == "X" && b5 == "X" && b9 == "X") {
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
+    alert("Gano la X");
+    contador();
+    limpiar();
   } else if (b3 == "X" && b5 == "X" && b7 == "X") {
-    setTimeout(function () {
-      contador();
-      limpiar();
-      alert("Ganó la X");
-    }, 100);
+    alert("Gano la X");
+    contador();
+    limpiar();
   } else if (b1 == "O" && b2 == "O" && b3 == "O") {
-    setTimeout(function () {
-      contador2();
-      limpiar();
-      alert("Ganó el O");
-    }, 100);
+    alert("Gano el O");
+    contador2();
+    limpiar();
   } else if (b4 == "O" && b5 == "O" && b6 == "O") {
-    setTimeout(function () {
-      contador2();
-      limpiar();
-      alert("Ganó el O");
-    }, 100);
+    alert("Gano el O");
+    contador2();
+    limpiar();
   } else if (b7 == "O" && b8 == "O" && b9 == "O") {
-    setTimeout(function () {
-      contador2();
-      limpiar();
-      alert("Ganó el O");
-    }, 100);
+    alert("Gano el O");
+    contador2();
+    limpiar();
   } else if (b1 == "O" && b4 == "O" && b7 == "O") {
-    setTimeout(function () {
-      contador2();
-      limpiar();
-      alert("Ganó el O");
-    }, 100);
+    alert("Gano el O");
+    contador2();
+    limpiar();
   } else if (b2 == "O" && b5 == "O" && b8 == "O") {
-    setTimeout(function () {
-      contador2();
-      limpiar();
-      alert("Ganó el O");
-    }, 100);
+    alert("Gano el O");
+    contador2();
+    limpiar();
   } else if (b3 == "O" && b6 == "O" && b9 == "O") {
-    setTimeout(function () {
-      contador2();
-      limpiar();
-      alert("Ganó el O");
-    }, 100);
+    alert("Gano el O");
+    contador2();
+    limpiar();
   } else if (b1 == "O" && b5 == "O" && b9 == "O") {
-    setTimeout(function () {
-      contador2();
-      limpiar();
-      alert("Ganó el O");
-    }, 100);
+    alert("Gano el O");
+    contador2();
+    limpiar();
   } else if (b3 == "O" && b5 == "O" && b7 == "O") {
     alert("Gano el O");
     contador2();
@@ -492,12 +474,10 @@ function verificarGanador() {
     b8 !== "" &&
     b9 !== ""
   ) {
-    setTimeout(function () {
-      alert("Empate");
-      empates++;
-      limpiar();
-    }, 100);
+    alert("Empate");
+    empates++;
     document.getElementById("empate").innerHTML = empates;
+    limpiar();
   }
 }
 
@@ -536,10 +516,9 @@ function limpiar() {
 
 // Contador cuando el ganador es la "X"
 function contador() {
-  if (letra == "x") {
+  if (letra === "x") {
     contadorh++;
-    console.log(contadorh + "  contador h");
-  } else if (letra == "o") {
+  } else if (letra === "o") {
     contadorc++;
   }
   document.getElementById("Humano").innerHTML = contadorh;
@@ -548,9 +527,9 @@ function contador() {
 
 // Contador cuando el ganador es la "O"
 function contador2() {
-  if (letra == "o") {
+  if (letra === "o") {
     contadorh++;
-  } else if (letra == "x") {
+  } else if (letra === "x") {
     contadorc++;
   }
   document.getElementById("Humano").innerHTML = contadorh;
@@ -565,9 +544,13 @@ function desaparecerX() {
     document.getElementById("fichah").innerHTML = "X";
     document.getElementById("ficham").innerHTML = "O";
     letra = letras[0];
+    console.log(letra + "  LETRA X");
+    console.log(habilitado + "  habilitado X");
     juego();
   } else {
-    alert("Antes de elegir una letra debe apretar el boton de comenzar a jugar");
+    alert(
+      "Antes de elegir una letra debe apretar el boton de comenzar a jugar"
+    );
   }
 }
 
@@ -579,9 +562,12 @@ function desaparecerO() {
     document.getElementById("fichah").innerHTML = "O";
     document.getElementById("ficham").innerHTML = "X";
     letra = letras[1];
+    console.log(letra + "  LETRA O");
+    console.log(habilitado + "  habilitado O");
     juego();
   } else {
-    alert("Antes de elegir una letra debe apretar el boton de comenzar a jugar");
+    alert(
+      "Antes de elegir una letra debe apretar el boton de comenzar a jugar"
+    );
   }
 }
-
