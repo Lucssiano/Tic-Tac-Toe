@@ -1,25 +1,25 @@
 // ### VARIABLES ###
 
 // Número random
-var randNum;
+let randNum;
 // Obtiene el tablero del tateti
-var elems = document.getElementsByClassName("celda");
+let elems = document.getElementsByClassName("celda");
 // Array donde están los jugadores
-var jugadores = ["LA MAQUINA", "EL HUMANO"];
+let jugadores = ["LA MAQUINA", "EL HUMANO"];
 // Aquí se guarda el jugador elegido aleatoriamente
-var jugadorFinal = "";
+let jugadorFinal = "";
 // Array para la habilitación del juego
-var habilitacion = ["H"];
+let habilitacion = ["H"];
 // Variable que indica que el juego está habilitado
-var habilitado = "";
+let habilitado = "";
 // Letras del tateti
-var letras = ["x", "o"];
+let letras = ["x", "o"];
 // Letra elegida por el jugador
-var letra = [];
+let letra = [];
 // Turnos
-var turno;
+let turno;
 // Espacios del tateti
-var IDS = [
+let IDS = [
   "ceroCero",
   "ceroUno",
   "ceroDos",
@@ -31,31 +31,31 @@ var IDS = [
   "dosDos",
 ];
 // Espacios del tateti usados
-var IDS2 = [];
+let IDS2 = [];
 // Posicion en la que cae la ficha de la máquina
-var posicionmaq = [];
+let posicionmaq = [];
 // Contador de partidas ganadas por el humano
-var contadorh = 0;
+let contadorh = 0;
 // Contador de partidas ganadas por la máquina
-var contadorc = 0;
+let contadorc = 0;
 // Contador de partidas empatadas
-var empates = 0;
+let empates = 0;
 // Las siguientes 8 variables cuando valen 1 indican que la máquina o el usuario escribio en dicha posición
-var ocupadac0 = 0;
-var ocupadac1 = 0;
-var ocupadac2 = 0;
-var ocupadac3 = 0;
-var ocupadac4 = 0;
-var ocupadac5 = 0;
-var ocupadac6 = 0;
-var ocupadac7 = 0;
-var ocupadac8 = 0;
+let ocupadac0 = 0;
+let ocupadac1 = 0;
+let ocupadac2 = 0;
+let ocupadac3 = 0;
+let ocupadac4 = 0;
+let ocupadac5 = 0;
+let ocupadac6 = 0;
+let ocupadac7 = 0;
+let ocupadac8 = 0;
 
 // ### FUNCIONES ###
 
 // Funcion para que comience el juego
 function inicio() {
-  for (var i = 0; i < elems.length; i++) {
+  for (let i = 0; i < elems.length; i++) {
     elems[i].style.display = "inline-block";
   }
   document.getElementById("paginaant").style.visibility = "hidden";
@@ -388,15 +388,15 @@ function jugadaHumano8() {
 
 // Verifica si alguien ganó
 function verificarGanador() {
-  var b1 = document.getElementById("ceroCero").textContent;
-  var b2 = document.getElementById("ceroUno").textContent;
-  var b3 = document.getElementById("ceroDos").textContent;
-  var b4 = document.getElementById("unoCero").textContent;
-  var b5 = document.getElementById("unoUno").textContent;
-  var b6 = document.getElementById("unoDos").textContent;
-  var b7 = document.getElementById("dosCero").textContent;
-  var b8 = document.getElementById("dosUno").textContent;
-  var b9 = document.getElementById("dosDos").textContent;
+  let b1 = document.getElementById("ceroCero").textContent;
+  let b2 = document.getElementById("ceroUno").textContent;
+  let b3 = document.getElementById("ceroDos").textContent;
+  let b4 = document.getElementById("unoCero").textContent;
+  let b5 = document.getElementById("unoUno").textContent;
+  let b6 = document.getElementById("unoDos").textContent;
+  let b7 = document.getElementById("dosCero").textContent;
+  let b8 = document.getElementById("dosUno").textContent;
+  let b9 = document.getElementById("dosDos").textContent;
 
   if (b1 == "X" && b2 == "X" && b3 == "X") {
     alert("Gano la X");
