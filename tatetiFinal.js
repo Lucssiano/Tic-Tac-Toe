@@ -1,4 +1,5 @@
 // ### VARIABLES ###
+const title = document.getElementById("title");
 
 // Número random
 var randNum;
@@ -74,6 +75,7 @@ function juego() {
 
 // La máquina escribe al azar con O
 function maquinaO() {
+  verificarGanador();
   posicionmaq = IDS[Math.floor(Math.random() * IDS.length)];
   // verificarGanador();
   if (IDS2.includes(posicionmaq)) {
@@ -142,11 +144,12 @@ function maquinaO() {
       turno = 1;
     }
   }
-  verificarGanador();
+  // verificarGanador();
 }
 
 // La máquina escribe al azar con X
 function maquinaX() {
+  verificarGanador();
   posicionmaq = IDS[Math.floor(Math.random() * IDS.length)];
   // verificarGanador();
   if (IDS2.includes(posicionmaq)) {
@@ -215,7 +218,7 @@ function maquinaX() {
       turno = 1;
     }
   }
-  verificarGanador();
+  // verificarGanador();
 }
 
 // Primera casilla que apreta el usuario
@@ -442,7 +445,6 @@ function verificarGanador() {
 
 // "Resetea" el juego
 function limpiar() {
-  // ¿Por qué entra mas de una vez a limpiar?
   b1 = document.getElementById("ceroCero").textContent = "";
   b2 = document.getElementById("ceroUno").textContent = "";
   b3 = document.getElementById("ceroDos").textContent = "";
@@ -452,6 +454,7 @@ function limpiar() {
   b7 = document.getElementById("dosCero").textContent = "";
   b8 = document.getElementById("dosUno").textContent = "";
   b9 = document.getElementById("dosDos").textContent = "";
+  title.innerText = "TATETÍ";
   IDS2 = [];
   letra = [];
   posicionmaq = [];
@@ -529,24 +532,27 @@ function desaparecerO() {
   }
 }
 
+// ### CON LAS ALERTAS SE BUGEA TODO (PORQUE???)###
+
 // Funcion para el Timeout cuando gana la O
 function ganadorO() {
   setTimeout(function () {
     contador2();
     limpiar();
     alert("Ganó el O");
-    console.log('entró O');
-  }, 100);
+    console.log("entró O");
+  }, 1000);
 }
-
+// Así anda bien
 // Funcion para el Timeout cuando gana la X
 function ganadorX() {
+  title.innerText = "GANÓ LA X";
   setTimeout(function () {
     contador();
     limpiar();
-    alert("Ganó la X");
-    console.log('entró X');
-  }, 100);
+    // alert("Ganó la X");
+    console.log("entró X");
+  }, 2000);
 }
 
 // Funcion para el Timeout cuando hay un empate
@@ -555,8 +561,8 @@ function nGanador() {
     alert("Empate");
     empates++;
     limpiar();
-    console.log('entró Empate');
-  }, 100);
+    console.log("entró Empate");
+  }, 1000);
 }
 
 // Entra más de una vez a los Timeout
