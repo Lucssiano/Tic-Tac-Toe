@@ -11,11 +11,7 @@ let jugadores = ["LA MAQUINA", "EL HUMANO"];
 let jugadorFinal = "";
 // Array para la habilitación del juego
 let habilitacion = ["H"];
-<<<<<<< HEAD
-// Variable que indica que el juego está habilitado
-=======
 // Variable que indica que el juego está habilitado para jugarse
->>>>>>> develop
 let habilitado = "";
 // Letras del tateti
 let letras = ["x", "o"];
@@ -24,21 +20,7 @@ let letra = [];
 // Turnos
 let turno;
 // Espacios del tateti
-<<<<<<< HEAD
-let IDS = [
-  "ceroCero",
-  "ceroUno",
-  "ceroDos",
-  "unoCero",
-  "unoUno",
-  "unoDos",
-  "dosCero",
-  "dosUno",
-  "dosDos",
-];
-=======
 let IDS = ["ceroCero", "ceroUno", "ceroDos", "unoCero", "unoUno", "unoDos", "dosCero", "dosUno", "dosDos"];
->>>>>>> develop
 // Espacios del tateti usados
 let IDS2 = [];
 // Posicion en la que cae la ficha de la máquina
@@ -59,11 +41,8 @@ let ocupadac5 = 0;
 let ocupadac6 = 0;
 let ocupadac7 = 0;
 let ocupadac8 = 0;
-<<<<<<< HEAD
-=======
 // Habilitación para los timeOut para ganar , perder o empatar
 let x = 0;
->>>>>>> develop
 
 // ### FUNCIONES ###
 
@@ -102,74 +81,6 @@ function juego() {
 
 // La máquina escribe al azar con O
 function maquinaO() {
-<<<<<<< HEAD
-  posicionmaq = IDS[Math.floor(Math.random() * IDS.length)];
-  verificarGanador();
-  if (IDS2.includes(posicionmaq)) {
-    maquinaO();
-  } else {
-    if (posicionmaq === "ceroCero") {
-      document.getElementById("ceroCero").textContent = "O";
-      ocupadac0 = 1;
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "ceroUno") {
-      ocupadac1 = 1;
-      document.getElementById("ceroUno").textContent = "O";
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "ceroDos") {
-      ocupadac2 = 1;
-      document.getElementById("ceroDos").textContent = "O";
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "unoCero") {
-      ocupadac3 = 1;
-      document.getElementById("unoCero").textContent = "O";
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "unoUno") {
-      ocupadac4 = 1;
-      document.getElementById("unoUno").textContent = "O";
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "unoDos") {
-      ocupadac5 = 1;
-      document.getElementById("unoDos").textContent = "O";
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "dosCero") {
-      ocupadac6 = 1;
-      document.getElementById("dosCero").textContent = "O";
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "dosUno") {
-      ocupadac7 = 1;
-      document.getElementById("dosUno").textContent = "O";
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "dosDos") {
-      ocupadac8 = 1;
-      document.getElementById("dosDos").textContent = "O";
-      IDS2.push(posicionmaq);
-      turno = 1;
-=======
   if (turno === 0) {
     verificarGanador();
     posicionmaq = IDS[Math.floor(Math.random() * IDS.length)];
@@ -240,7 +151,6 @@ function maquinaO() {
         IDS2.push(posicionmaq);
         turno = 1;
       }
->>>>>>> develop
     }
     // verificarGanador();
   }
@@ -248,74 +158,6 @@ function maquinaO() {
 
 // La máquina escribe al azar con X
 function maquinaX() {
-<<<<<<< HEAD
-  posicionmaq = IDS[Math.floor(Math.random() * IDS.length)];
-  verificarGanador();
-  if (IDS2.includes(posicionmaq)) {
-    maquinaX();
-  } else {
-    if (posicionmaq === "ceroCero") {
-      document.getElementById("ceroCero").textContent = "X";
-      ocupadac0 = 1;
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "ceroUno") {
-      ocupadac1 = 1;
-      document.getElementById("ceroUno").textContent = "X";
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "ceroDos") {
-      ocupadac2 = 1;
-      document.getElementById("ceroDos").textContent = "X";
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "unoCero") {
-      ocupadac3 = 1;
-      document.getElementById("unoCero").textContent = "X";
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "unoUno") {
-      ocupadac4 = 1;
-      document.getElementById("unoUno").textContent = "X";
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "unoDos") {
-      ocupadac5 = 1;
-      document.getElementById("unoDos").textContent = "X";
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "dosCero") {
-      ocupadac6 = 1;
-      document.getElementById("dosCero").textContent = "X";
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "dosUno") {
-      ocupadac7 = 1;
-      document.getElementById("dosUno").textContent = "X";
-      IDS2.push(posicionmaq);
-      turno = 1;
-    }
-
-    if (posicionmaq === "dosDos") {
-      ocupadac8 = 1;
-      document.getElementById("dosDos").textContent = "X";
-      IDS2.push(posicionmaq);
-      turno = 1;
-=======
   if (turno === 0) {
     verificarGanador();
     posicionmaq = IDS[Math.floor(Math.random() * IDS.length)];
@@ -386,7 +228,6 @@ function maquinaX() {
         IDS2.push(posicionmaq);
         turno = 1;
       }
->>>>>>> develop
     }
     // verificarGanador();
   }
@@ -558,67 +399,6 @@ function verificarGanador() {
   let b9 = document.getElementById("dosDos").textContent;
 
   if (b1 == "X" && b2 == "X" && b3 == "X") {
-<<<<<<< HEAD
-    alert("Gano la X");
-    contador();
-    limpiar();
-  } else if (b4 == "X" && b5 == "X" && b6 == "X") {
-    alert("Gano la X");
-    contador();
-    limpiar();
-  } else if (b7 == "X" && b8 == "X" && b9 == "X") {
-    alert("Gano la X");
-    contador();
-    limpiar();
-  } else if (b1 == "X" && b4 == "X" && b7 == "X") {
-    alert("Gano la X");
-    contador();
-    limpiar();
-  } else if (b2 == "X" && b5 == "X" && b8 == "X") {
-    alert("Gano la X");
-    contador();
-    limpiar();
-  } else if (b3 == "X" && b6 == "X" && b9 == "X") {
-    alert("Gano la X");
-    contador();
-    limpiar();
-  } else if (b1 == "X" && b5 == "X" && b9 == "X") {
-    alert("Gano la X");
-    contador();
-    limpiar();
-  } else if (b3 == "X" && b5 == "X" && b7 == "X") {
-    alert("Gano la X");
-    contador();
-    limpiar();
-  } else if (b1 == "O" && b2 == "O" && b3 == "O") {
-    alert("Gano el O");
-    contador2();
-    limpiar();
-  } else if (b4 == "O" && b5 == "O" && b6 == "O") {
-    alert("Gano el O");
-    contador2();
-    limpiar();
-  } else if (b7 == "O" && b8 == "O" && b9 == "O") {
-    alert("Gano el O");
-    contador2();
-    limpiar();
-  } else if (b1 == "O" && b4 == "O" && b7 == "O") {
-    alert("Gano el O");
-    contador2();
-    limpiar();
-  } else if (b2 == "O" && b5 == "O" && b8 == "O") {
-    alert("Gano el O");
-    contador2();
-    limpiar();
-  } else if (b3 == "O" && b6 == "O" && b9 == "O") {
-    alert("Gano el O");
-    contador2();
-    limpiar();
-  } else if (b1 == "O" && b5 == "O" && b9 == "O") {
-    alert("Gano el O");
-    contador2();
-    limpiar();
-=======
     ganadorX();
   } else if (b4 == "X" && b5 == "X" && b6 == "X") {
     ganadorX();
@@ -648,7 +428,6 @@ function verificarGanador() {
     ganadorO();
   } else if (b1 == "O" && b5 == "O" && b9 == "O") {
     ganadorO();
->>>>>>> develop
   } else if (b3 == "O" && b5 == "O" && b7 == "O") {
     ganadorO();
   } else if (
@@ -663,12 +442,6 @@ function verificarGanador() {
     b8 !== "" &&
     b9 !== ""
   ) {
-<<<<<<< HEAD
-    alert("Empate");
-    empates++;
-    document.getElementById("empate").innerHTML = empates;
-    limpiar();
-=======
     // Se le asigna el valor de 2 al turno para que la función de la máquina no se ejecute
     turno = 2;
     console.log(turno, "Empate");
@@ -682,7 +455,6 @@ function verificarGanador() {
       }, 100);
       x = 1;
     }
->>>>>>> develop
   }
 }
 
@@ -737,12 +509,8 @@ function contador() {
 function contador2() {
   if (letra === "o") {
     contadorh++;
-<<<<<<< HEAD
-  } else if (letra === "x") {
-=======
     console.log(contadorh + "  contador h");
   } else if (letra == "x") {
->>>>>>> develop
     contadorc++;
     console.log(contadorc + "  contador c");
   }
@@ -785,8 +553,6 @@ function desaparecerO() {
     );
   }
 }
-<<<<<<< HEAD
-=======
 
 // Funcion para el Timeout cuando gana la O
 function ganadorO() {
@@ -820,4 +586,3 @@ function ganadorX() {
 
 // Cuando el usuario gana con X y con O , o si empata entra dos veces a la función , pero el juego funciona correctamente
 // Ver como se podría solucionar eso
->>>>>>> develop
