@@ -4,7 +4,7 @@ const title = document.getElementById("title");
 // Número random
 let randNum;
 // Obtiene el tablero del tateti
-let elems = document.getElementsByClassName("celda");
+const elems = document.getElementsByClassName("celda");
 // Array donde están los jugadores
 let jugadores = ["LA MAQUINA", "EL HUMANO"];
 // Aquí se guarda el jugador elegido aleatoriamente
