@@ -4,7 +4,7 @@ const title = document.getElementById("title");
 // Número random
 let randNum;
 // Obtiene el tablero del tateti
-let elems = document.getElementsByClassName("celda");
+const elems = document.getElementsByClassName("celda");
 // Array donde están los jugadores
 let jugadores = ["LA MAQUINA", "EL HUMANO"];
 // Aquí se guarda el jugador elegido aleatoriamente
@@ -51,6 +51,7 @@ function inicio() {
   for (let i = 0; i < elems.length; i++) {
     elems[i].style.display = "inline-block";
   }
+  // Se podria poner que aparezca la grilla como acá abajo
   document.getElementById("paginaant").style.visibility = "hidden";
   randNum = Math.floor(Math.random() * jugadores.length);
   jugadorFinal = jugadores[randNum];

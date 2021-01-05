@@ -18,12 +18,11 @@
     <h2>Humano juega con: <span id="fichah"></span></h2>
 
     <section id="paginaant">
-        <input type="button" id="botonInicio" value="INICIAR EL JUEGO"
-            style="background-color: orange; margin-top: 5px;" onclick="inicio()">
+        <input type="button" id="botonInicio" value="INICIAR EL JUEGO" onclick="inicio()">
     </section>
 
     <section id="tablero">
-        <a class="celda" id="ceroCero" onclick="jugadaHumano0();verificarGanador();"></a>
+        <div class="celda" id="ceroCero" onclick="jugadaHumano0();verificarGanador();"></div>
         <div class="celda" id="ceroUno" onclick="jugadaHumano1();verificarGanador();"></div>
         <div class="celda" id="ceroDos" onclick="jugadaHumano2();verificarGanador();"></div>
         <div class="celda" id="unoCero" onclick="jugadaHumano3();verificarGanador();"></div>
@@ -35,21 +34,22 @@
     </section>
 
     <h4> <span id="cambio">Elija una letra </span> </h4>
-    <section id="letraelec"> <input type="button" id="botonLetraX" value="X" style="background-color: green;"
-            onclick="desaparecerX()">
-        <input type="button" id="botonLetraO" value="O" style="background-color: red;" onclick="desaparecerO()">
+
+    <section id="letraelec">
+        <input type="button" id="botonLetraX" value="X" onclick="desaparecerX()">
+        <input type="button" id="botonLetraO" value="O" onclick="desaparecerO()">
     </section>
 
     <section id="marcador">
         <legend>DATOS</legend>
         <h3>
-            <section id="ganadosH">Partidas ganadas por el humano: <span id="Humano"> 0</span></section>
+            <div id="ganadosH">Partidas ganadas por el humano: <span id="Humano"> 0</span></div>
         </h3>
         <h3>
-            <section id="ganadosC">Partidas ganadas por la computadora: <span id="Computadora"> 0</span></section>
+            <div id="ganadosC">Partidas ganadas por la computadora: <span id="Computadora"> 0</span></div>
         </h3>
         <h3>
-            <section id="Empates">Empates: <span id="empate"> 0</span></section>
+            <div id="Empates">Empates: <span id="empate"> 0</span></div>
         </h3>
     </section>
 
