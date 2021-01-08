@@ -3,6 +3,12 @@ body {
   overflow: hidden;
 }
 
+input[type="button"] {
+  border: none;
+  font-weight: bold;
+  box-shadow: 10px 5px 5px black;
+}
+
 h1 {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: gold;
@@ -41,7 +47,7 @@ h4 {
 }
 
 #botonInicio {
-  background-color: orange; 
+  background-color: orange;
   margin-top: 5px;
 }
 
@@ -90,7 +96,7 @@ h4 {
 
 .celda:hover {
   border: 1px solid #900;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 #ceroCero,
