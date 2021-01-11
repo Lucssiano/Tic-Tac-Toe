@@ -1,5 +1,4 @@
-// ### VARIABLES ###
-const title = document.getElementById("title");
+// ### VARIABLES ## //
 
 // Número random
 let randNum;
