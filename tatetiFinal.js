@@ -52,9 +52,7 @@ function inicio() {
   }
   document.getElementById("paginaant").style.visibility = "hidden";
   randNum = Math.floor(Math.random() * jugadores.length);
-  console.log(randNum + "  numero random");
   jugadorFinal = jugadores[randNum];
-  console.log(jugadorFinal + "  jugador final");
   alert("Comienza jugando:  " + jugadorFinal);
   habilitado = habilitacion;
 }
@@ -62,17 +60,13 @@ function inicio() {
 // Función para los turnos
 function juego() {
   if (jugadorFinal === jugadores[0] && letra === letras[0]) {
-    console.log(letra);
     turno = 0;
-    console.log(turno + "  turno");
     maquinaO();
   } else if (jugadorFinal === jugadores[0] && letra === letras[1]) {
     turno = 0;
-    console.log(turno + "  turno");
     maquinaX();
   } else if (jugadorFinal === jugadores[1]) {
     turno = 1;
-    console.log(turno + "  turno");
   } else {
     alert("Presione el boton de iniciar el juego");
   }
@@ -443,10 +437,8 @@ function verificarGanador() {
   ) {
     // Se le asigna el valor de 2 al turno para que la función de la máquina no se ejecute
     turno = 2;
-    console.log(turno, "Empate");
     if (x === 0) {
       empates++;
-      console.log(empates + "  contador empates");
       document.getElementById("empate").innerHTML = empates;
       setTimeout(function () {
         alert("Empate");
@@ -472,7 +464,6 @@ function limpiar() {
   letra = [];
   posicionmaq = [];
   turno;
-  console.log(turno, "limpiar");
   habilitacion = ["H"];
   habilitado = "";
   ocupadac0 = 0;
@@ -498,7 +489,6 @@ function contador() {
     contadorh++;
   } else if (letra === "o") {
     contadorc++;
-    console.log(contadorc + "  contador c");
   }
   document.getElementById("Humano").innerHTML = contadorh;
   document.getElementById("Computadora").innerHTML = contadorc;
@@ -508,10 +498,8 @@ function contador() {
 function contador2() {
   if (letra === "o") {
     contadorh++;
-    console.log(contadorh + "  contador h");
   } else if (letra == "x") {
     contadorc++;
-    console.log(contadorc + "  contador c");
   }
   document.getElementById("Humano").innerHTML = contadorh;
   document.getElementById("Computadora").innerHTML = contadorc;
@@ -525,13 +513,9 @@ function desaparecerX() {
     document.getElementById("fichah").innerHTML = "X";
     document.getElementById("ficham").innerHTML = "O";
     letra = letras[0];
-    console.log(letra + "  LETRA X");
-    console.log(habilitado + "  habilitado X");
     juego();
   } else {
-    alert(
-      "Antes de elegir una letra debe apretar el boton de comenzar a jugar"
-    );
+    alert("Antes de elegir una letra debe apretar el boton de comenzar a jugar");
   }
 }
 
@@ -543,13 +527,9 @@ function desaparecerO() {
     document.getElementById("fichah").innerHTML = "O";
     document.getElementById("ficham").innerHTML = "X";
     letra = letras[1];
-    console.log(letra + "  LETRA O");
-    console.log(habilitado + "  habilitado O");
     juego();
   } else {
-    alert(
-      "Antes de elegir una letra debe apretar el boton de comenzar a jugar"
-    );
+    alert("Antes de elegir una letra debe apretar el boton de comenzar a jugar");
   }
 }
 
@@ -557,7 +537,6 @@ function desaparecerO() {
 function ganadorO() {
   // Se le asigna el valor de 2 al turno para que la función de la máquina no se ejecute
   turno = 2;
-  console.log(turno, "ganador O");
   if (x === 0) {
     setTimeout(function () {
       contador2();
@@ -572,7 +551,6 @@ function ganadorO() {
 function ganadorX() {
   // Se le asigna el valor de 2 al turno para que la función de la máquina no se ejecute
   turno = 2;
-  console.log(turno, "ganador X");
   if (x === 0) {
     setTimeout(function () {
       contador();
